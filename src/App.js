@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { Container, Row, Col } from "reactstrap";
+
+import { Switch, Route } from "react-router-dom";
+
+import Navi from "./components/Navi";
+import Home from "./pages/Home";
+import Quotes from "./pages/Quotes";
+import Detail from "./pages/Detail";
+
+export default class App extends Component {
+  render() {
+    return (
+      <Container>
+        <Row>
+          <Col xs="12">
+            <Navi />
+          </Col>
+          <Col xs="12">
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/quotes" component={Quotes} />
+              <Route path="/char/:name" component={Detail} />
+            </Switch>
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
 }
-
-export default App;
