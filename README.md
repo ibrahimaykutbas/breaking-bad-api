@@ -1,4 +1,4 @@
-# Basket Application
+# Breaking Bad API
 [Project](https://breaking-bad-api-app.web.app/)
 ## Built With
 ReactJS
